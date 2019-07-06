@@ -60,7 +60,7 @@ class IceCream extends Component {
     const { sortColumn, pageSize, currentPage } = this.state;
     const { totalCount, data: flavors } = this.getPagedData();
     var imgStyle = {
-      transform: "translateX(px) translateY(30px)",
+      transform: "translateY(40px)",
       maxWidth: "250px"
     };
     return (
