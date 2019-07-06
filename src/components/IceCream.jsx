@@ -75,7 +75,7 @@ class IceCream extends Component {
             <img
               style={imgStyle}
               src={handsHoldingIceCream}
-              alt="Picture of ice cream"
+              alt="ice cream"
             />
           </div>
           <div className="col">

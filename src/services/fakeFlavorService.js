@@ -1,4 +1,4 @@
-import * as typeAPI from './fakeTypeService';
+// import * as typeAPI from './fakeTypeService';
 
 const flavors = [
   {

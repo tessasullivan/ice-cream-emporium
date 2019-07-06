@@ -14,6 +14,9 @@ class IceCreamForm extends Component {
                 <option name="type" value="deluxe">
                   Deluxe
                 </option>
+                <option name="type" value="sorbet">
+                  Sorbet
+                </option>
               </select>
             </div>
             <div className="col-2">
