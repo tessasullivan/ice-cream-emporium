@@ -1,15 +1,24 @@
-import React from 'react';
-import './App.css';
-import IceCream from './components/IceCream';
-import StoreHeader from './components/storeHeader';
+import React, { Component } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
+import IceCream from "./components/IceCream";
+import IceCreamForm from "./components/IceCreamForm";
+import StoreHeader from "./components/storeHeader";
 
-function App() {
-  return (
-    <main className="container">
-      <StoreHeader />
-      <IceCream />
-    </main>
-  );
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <StoreHeader />
+        <main className="container">
+          <Switch>
+            <Route path="/add" component={IceCreamForm} />
+            <Route path="/" component={IceCream} />
+          </Switch>
+        </main>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
