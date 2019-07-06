@@ -8,7 +8,8 @@ class IceCreamTable extends Component {
     { path: "type.name", label: "Type"},
     { path: "amountInStock", label: "Amount"},
     { path: "price", label: "Price"}
-  ]
+  ];
+
   render() { 
     const { flavors, onSort, sortColumn } = this.props;
     return ( 
