@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import IceCream from './components/IceCream';
 
 function App() {
   return (
-    <React.Fragment className="container">
-
-    </React.Fragment>
+    <main className="container">
+      <IceCream />
+    </main>
   );
 }
 
