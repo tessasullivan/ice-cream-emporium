@@ -5,7 +5,8 @@ import { getIceCream } from "../services/fakeFlavorService";
 import { getIceCreamTypes } from "../services/fakeTypeService";
 import { paginate } from "./common/paginate";
 import Pagination from "./common/pagination";
-import ListGroup from "./common/listGroup"
+import ListGroup from "./common/listGroup";
+import handsHoldingIceCream from "../assets/handsHoldingIceCream.jpeg";
 
 class IceCream extends Component {
   state = {
@@ -58,30 +59,40 @@ class IceCream extends Component {
   render() {
     const { sortColumn, pageSize, currentPage } = this.state;
     const { totalCount, data: flavors } = this.getPagedData();
-
+    var imgStyle = {
+      transform: "translateX(px) translateY(30px)",
+      maxWidth: "250px"
+    };
     return (
-      <div className="row">
-        <div className="col-3">
-        <ListGroup
-            items={this.state.types}
-            selectedItem={this.state.selectedType}
-            onItemSelect={this.handleTypeSelect}
-          />
+      <React.Fragment>
+        <div className="row">
+          <div className="col-3">
+            <ListGroup
+              items={this.state.types}
+              selectedItem={this.state.selectedType}
+              onItemSelect={this.handleTypeSelect}
+            />
+            <img
+              style={imgStyle}
+              src={handsHoldingIceCream}
+              alt="Picture of ice cream"
+            />
+          </div>
+          <div className="col">
+            <IceCreamTable
+              flavors={flavors}
+              sortColumn={sortColumn}
+              onSort={this.handleSort}
+            />
+            <Pagination
+              itemsCount={totalCount}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={this.handlePageChange}
+            />
+          </div>
         </div>
-        <div className="col">
-          <IceCreamTable
-            flavors={flavors}
-            sortColumn={sortColumn}
-            onSort={this.handleSort}
-          />
-          <Pagination
-            itemsCount={totalCount}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={this.handlePageChange}
-          />
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
