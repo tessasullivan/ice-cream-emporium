@@ -1,11 +1,13 @@
 # Tessa's Ice Cream Shop
-#### bt **Tessa Sullivan**
+#### by **Tessa Sullivan**
 
 ## Description
 This application will allow employees to manage the ice cream store's inventory.
 
 ### Specs
+![Component diagram](https://github.com/tessasullivan/ice-cream-store-react/tree/master/src/Ice-cream-store.png)
 | User story | Details|
+| :-------------     | :------------- |
 | Users can see list of ice creams | List includes flavor, type of ice cream, and price |
 | Users can sort list | Can sort by flavor, type, or price |
 
@@ -13,6 +15,7 @@ This application will allow employees to manage the ice cream store's inventory.
 
 #### Future enhancements
 | User story | Details |
+| :-------------     | :------------- |
 | Employee can add new flavors of ice cream | |
 | Employee can edit inventory | They can edit the name, type of ice cream and price |
 | Employee can sell ice cream | The number of available pints decreases when sold |

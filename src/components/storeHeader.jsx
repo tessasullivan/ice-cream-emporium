@@ -4,7 +4,7 @@ const StoreHeader = () => {
     fontFamily: "fantasy",
     color: "purple",
     textAlign: "center",
-    marginBottom: "20px"
+    margin: "20px 0 20px 0",
   }
   return ( 
     <h1 style={h1Styles}>Tessa's Ice Cream Imporium</h1>

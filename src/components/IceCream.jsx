@@ -5,13 +5,14 @@ import { getIceCream } from "../services/fakeFlavorService";
 import { getIceCreamTypes } from "../services/fakeTypeService";
 import { paginate } from "./common/paginate";
 import Pagination from "./common/pagination";
+import ListGroup from "./common/listGroup"
 
 class IceCream extends Component {
   state = {
     flavors: [],
     types: [],
     currentPage: 1,
-    pageSize: 4,
+    pageSize: 5,
     sortColumn: { path: "name", order: "asc" }
   };
 
@@ -60,7 +61,13 @@ class IceCream extends Component {
 
     return (
       <div className="row">
-        <div className="col-3" />
+        <div className="col-3">
+        <ListGroup
+            items={this.state.types}
+            selectedItem={this.state.selectedType}
+            onItemSelect={this.handleTypeSelect}
+          />
+        </div>
         <div className="col">
           <IceCreamTable
             flavors={flavors}
