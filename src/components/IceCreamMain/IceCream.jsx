@@ -98,6 +98,7 @@ class IceCream extends Component {
               sortColumn={sortColumn}
               onSort={this.handleSort}
               onDelete={this.handleDelete}
+              currentRouterPath={this.props.currentRouterPath}
             />
             <Pagination
               itemsCount={totalCount}
