@@ -4,27 +4,6 @@ import { Link } from "react-router-dom";
 import Table from "../common/table";
 
 class IceCreamTable extends Component {
-  // columns = [
-  //   {
-  //     path: "name",
-  //     label: "Flavor",
-  //     content: flavor => <Link to={`flavors/${flavor._id}`}>{flavor.name}</Link>
-  //   },
-  //   { path: "type.name", label: "Type" },
-  //   { path: "amountInStock", label: "Amount" },
-  //   { path: "price", label: "Price" },
-  //   {
-  //     key: "delete",
-  //     content: flavor => (
-  //       <button
-  //         onClick={() => this.props.onDelete(flavor)}
-  //         className="btn btn-danger btn-sm"
-  //       >
-  //         Delete
-  //       </button>
-  //     )
-  //   }
-  // ];
 
   configureTableContent = currentRouterPath => {
     // These columns are the same for patrons and employees
@@ -33,7 +12,7 @@ class IceCreamTable extends Component {
       { path: "amountInStock", label: "Amount" },
       { path: "price", label: "Price" }
     ];
-    console.log(currentRouterPath);
+
     // If currentRouterPath is employees, enable link to ice cream(for editing), delete, and sell buttons
     if (currentRouterPath === "/employees") {
       columns.unshift({
@@ -43,7 +22,19 @@ class IceCreamTable extends Component {
           <Link to={`flavors/${flavor._id}`}>{flavor.name}</Link>
         )
       });
-      columns.push({
+      columns.push(
+        {
+        key: "sell",
+        content: flavor => (
+          <button
+            onClick={() => this.props.onSell(flavor)}
+            className="btn btn-primary btn-sm"
+          >
+            Sell
+          </button>
+        )
+      },
+      {
         key: "delete",
         content: flavor => (
           <button
@@ -61,16 +52,13 @@ class IceCreamTable extends Component {
       });
     }
 
-    console.log(columns);
     return columns;
   };
 
   render() {
     const { flavors, onSort, sortColumn, currentRouterPath } = this.props;
-    // this.configureTableContent();
     return (
       <Table
-        // columns={this.columns}
         columns={this.configureTableContent(currentRouterPath)}
         data={flavors}
         sortColumn={sortColumn}

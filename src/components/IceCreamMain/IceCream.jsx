@@ -34,6 +34,13 @@ class IceCream extends Component {
     deleteIceCream(flavor._id);
   };
 
+  handleSale = (flavor) => {
+    let flavors = this.state.flavors.filter(f => f._id !== flavor._id);
+    flavor.amountInStock--;
+    flavors.push(flavor);
+    this.setState({flavors});
+  }
+
   handleTypeSelect = type => {
     this.setState({ selectedType: type, currentPage: 1 });
   };
@@ -98,6 +105,7 @@ class IceCream extends Component {
               sortColumn={sortColumn}
               onSort={this.handleSort}
               onDelete={this.handleDelete}
+              onSell={this.handleSale}
               currentRouterPath={this.props.currentRouterPath}
             />
             <Pagination
