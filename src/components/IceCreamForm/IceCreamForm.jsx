@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import Joi from "joi-browser";
 import Form from "../common/form";
-import { getIceCream, saveIceCream } from "../../services/fakeFlavorService";
+import { getFlavor, saveIceCream } from "../../services/fakeFlavorService";
 import { getIceCreamTypes } from "../../services/fakeTypeService";
 
 class IceCreamForm extends Form {
@@ -9,7 +9,7 @@ class IceCreamForm extends Form {
     data: {
       flavor: "",
       typeId: "",
-      amount: "",
+      amountInStock: "",
       price: ""
     },
     types: [],
@@ -33,9 +33,9 @@ class IceCreamForm extends Form {
     if (flavorId === "new") return;
 
     // If we're editing a flavor that doesn't exist, send them to 404 page
-    const flavor = getIceCream(flavorId);
+    const flavor = getFlavor(flavorId);
     if (!flavor) return this.props.history.replace("/not-found");
-
+console.log(flavor);
     // If we're editing an existing flavor, get the data
     this.setState({ data: this.mapToViewModel(flavor)});
   }
@@ -45,7 +45,7 @@ class IceCreamForm extends Form {
       _id: flavor._id,
       name: flavor.name,
       typeId: flavor.type._id,
-      amount: flavor.amountInStock,
+      amountInStock: flavor.amountInStock,
       price: flavor.price
     }
   }

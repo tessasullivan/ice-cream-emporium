@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import IceCreamTable from "../IceCreamTable/iceCreamTable";
-import { getIceCream, deleteIceCream } from "../../services/fakeFlavorService";
+import { getAllFlavors, deleteIceCream } from "../../services/fakeFlavorService";
 import { getIceCreamTypes } from "../../services/fakeTypeService";
 import { paginate } from "../common/paginate";
 import Pagination from "../common/pagination";
@@ -13,13 +13,13 @@ class IceCream extends Component {
     flavors: [],
     types: [],
     currentPage: 1,
-    pageSize: 5,
+    pageSize: 10,
     sortColumn: { path: "name", order: "asc" }
   };
 
   componentDidMount() {
     const types = [{ _id: "", name: "All Types" }, ...getIceCreamTypes()];
-    this.setState({ flavors: getIceCream(), types });
+    this.setState({ flavors: getAllFlavors(), types });
   }
 
   handlePageChange = page => {

@@ -44,6 +44,13 @@ const flavors = [
     price: 5.5
   },
   {
+    _id: "5b21ca3eeb7f6fbccd471904",
+    name: "Almond Amaretto",
+    type: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Deluxe" },
+    amountInStock: 105, 
+    price: 5.5
+  },
+    {
     _id: "5b21ca3eeb7f6fbccd472001",
     name: "Pineapple",
     type: {  _id: "5b21ca3eeb7f6fbccd471820", name: "Sorbet" },
@@ -72,8 +79,12 @@ const flavors = [
     price: 4
   },
 ];
-export function getIceCream() {
+export function getAllFlavors() {
   return flavors;
+}
+
+export function getFlavor(id) {
+  return flavors.find( f => f._id === id);
 }
 
 export function saveIceCream(flavor){

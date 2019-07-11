@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch} from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
 import IceCream from "./components/IceCreamMain/IceCream";
 // import IceCreamImage from "./components/IceCreamImage";
@@ -10,16 +10,17 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar/>
+        <NavBar />
         <main className="container">
           <Switch>
             {/* <Route path="/employees" render={props => (
 
             )} */}
-            <Route path="/add" component={IceCreamForm} />
-            <Route path="/" component={IceCream} />
+            <Route path="/flavors/:id" component={IceCreamForm} />
+            <Route path="/flavors" component={IceCream} />
+          <Redirect from="/" exact to="/flavors" />
+          {/* <Redirect to="/not-found" /> */}
           </Switch>
-          {/* <IceCreamImage/> */}
         </main>
       </React.Fragment>
     );
