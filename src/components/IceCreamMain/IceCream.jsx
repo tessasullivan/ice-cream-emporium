@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 import IceCreamTable from "../IceCreamTable/iceCreamTable";
 import { getAllFlavors, deleteIceCream } from "../../services/fakeFlavorService";
@@ -14,6 +15,7 @@ class IceCream extends Component {
     types: [],
     currentPage: 1,
     pageSize: 10,
+    selectedType: null,
     sortColumn: { path: "name", order: "asc" }
   };
 
@@ -70,7 +72,6 @@ class IceCream extends Component {
       maxWidth: "250px"
     };
     return (
-      <React.Fragment>
         <div className="row">
           <div className="col-3">
             <ListGroup
@@ -85,6 +86,13 @@ class IceCream extends Component {
             />
           </div>
           <div className="col">
+          <Link
+            to="/flavors/new"
+            className="btn btn-primary"
+            style={{ marginBottom: 20 }}
+          >
+            New Flavor
+          </Link>
             <IceCreamTable
               flavors={flavors}
               sortColumn={sortColumn}
@@ -99,7 +107,6 @@ class IceCream extends Component {
             />
           </div>
         </div>
-      </React.Fragment>
     );
   }
 }

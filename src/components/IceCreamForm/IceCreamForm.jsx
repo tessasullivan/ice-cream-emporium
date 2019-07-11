@@ -7,7 +7,7 @@ import { getIceCreamTypes } from "../../services/fakeTypeService";
 class IceCreamForm extends Form {
   state = {
     data: {
-      flavor: "",
+      name: "",
       typeId: "",
       amountInStock: "",
       price: ""
@@ -18,15 +18,27 @@ class IceCreamForm extends Form {
 
   schema = {
     _id: Joi.string(),
-    flavor: Joi.string().required().label('Flavor'),
-    typeId: Joi.string().required().label('Type'),
-    amount: Joi.number().required().min(0).max(124).label('Amount'),
-    price: Joi.number().required().min(1).max(6).label('Price')
+    name: Joi.string()
+      .required()
+      .label("Flavor"),
+    typeId: Joi.string()
+      .required()
+      .label("Type"),
+    amountInStock: Joi.number()
+      .required()
+      .min(0)
+      .max(124)
+      .label("Amount"),
+    price: Joi.number()
+      .required()
+      .min(1)
+      .max(6)
+      .label("Price")
   };
 
   componentDidMount() {
     const types = getIceCreamTypes();
-    this.setState({types});
+    this.setState({ types });
 
     // Check to see if we are adding a new flavor
     const flavorId = this.props.match.params.id;
@@ -35,9 +47,10 @@ class IceCreamForm extends Form {
     // If we're editing a flavor that doesn't exist, send them to 404 page
     const flavor = getFlavor(flavorId);
     if (!flavor) return this.props.history.replace("/not-found");
-console.log(flavor);
+
     // If we're editing an existing flavor, get the data
-    this.setState({ data: this.mapToViewModel(flavor)});
+    this.setState({ data: this.mapToViewModel(flavor) });
+
   }
 
   mapToViewModel(flavor) {
@@ -47,13 +60,13 @@ console.log(flavor);
       typeId: flavor.type._id,
       amountInStock: flavor.amountInStock,
       price: flavor.price
-    }
+    };
   }
 
   doSubmit = () => {
     saveIceCream(this.state.data);
-    this.props.history.push("/")
-  }
+    this.props.history.push("/flavors");
+  };
   render() {
     return (
       <div>

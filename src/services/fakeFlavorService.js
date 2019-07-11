@@ -91,7 +91,7 @@ export function saveIceCream(flavor){
   let flavorInDb = flavors.find(f => f._id === flavor._id) || {};
   flavorInDb.name = flavor.name;
   flavorInDb.type = typesAPI.types.find(t => t._id === flavor.typeId);
-  flavorInDb.amountInStock = flavor.amount;
+  flavorInDb.amountInStock = flavor.amountInStock;
   flavorInDb.price = flavor.price;
 
   // If the flavor isn't in the above table, add it
