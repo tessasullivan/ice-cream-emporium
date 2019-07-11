@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import _ from "lodash";
-import IceCreamTable from "./iceCreamTable";
-import { getIceCream } from "../services/fakeFlavorService";
-import { getIceCreamTypes } from "../services/fakeTypeService";
-import { paginate } from "./common/paginate";
-import Pagination from "./common/pagination";
-import ListGroup from "./common/listGroup";
-import handsHoldingIceCream from "../assets/handsHoldingIceCream.jpeg";
+import IceCreamTable from "../IceCreamTable/iceCreamTable";
+import { getIceCream, deleteIceCream } from "../../services/fakeFlavorService";
+import { getIceCreamTypes } from "../../services/fakeTypeService";
+import { paginate } from "../common/paginate";
+import Pagination from "../common/pagination";
+import ListGroup from "../common/listGroup";
+import handsHoldingIceCream from "../../assets/handsHoldingIceCream.jpeg";
 
 class IceCream extends Component {
   state = {
@@ -24,6 +24,12 @@ class IceCream extends Component {
 
   handlePageChange = page => {
     this.setState({ currentPage: page });
+  };
+
+  handleDelete = flavor => {
+    const flavors = this.state.flavors.filter(f => f._id !== flavor._id);
+    this.setState({flavors});
+    deleteIceCream(flavor._id);
   };
 
   handleTypeSelect = type => {
@@ -83,6 +89,7 @@ class IceCream extends Component {
               flavors={flavors}
               sortColumn={sortColumn}
               onSort={this.handleSort}
+              onDelete={this.handleDelete}
             />
             <Pagination
               itemsCount={totalCount}

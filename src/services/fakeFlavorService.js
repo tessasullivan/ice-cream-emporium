@@ -1,4 +1,4 @@
-// import * as typeAPI from './fakeTypeService';
+import * as typesAPI from './fakeTypeService';
 
 const flavors = [
   {
@@ -74,4 +74,26 @@ const flavors = [
 ];
 export function getIceCream() {
   return flavors;
+}
+
+export function saveIceCream(flavor){
+  let flavorInDb = flavors.find(f => f._id === flavor._id) || {};
+  flavorInDb.name = flavor.name;
+  flavorInDb.type = typesAPI.types.find(t => t._id === flavor.typeId);
+  flavorInDb.amountInStock = flavor.amount;
+  flavorInDb.price = flavor.price;
+
+  // If the flavor isn't in the above table, add it
+  if (!flavorInDb) {
+    flavorInDb._id = Date.now().toString();
+    flavors.push(flavor);
+
+  return flavorInDb;
+  }
+}
+
+export function deleteIceCream(id) {
+  let flavorInDb = flavors.find(f => f._id === id);
+  flavors.splice(flavors.indexOf(flavorInDb), 1);
+  return flavorInDb;
 }
