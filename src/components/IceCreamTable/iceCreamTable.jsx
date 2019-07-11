@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Table from "../common/table";
 
 class IceCreamTable extends Component {
-
   configureTableContent = currentRouterPath => {
     // These columns are the same for patrons and employees
     let columns = [
@@ -24,27 +23,28 @@ class IceCreamTable extends Component {
       });
       columns.push(
         {
-        key: "sell",
-        content: flavor => (
-          <button
-            onClick={() => this.props.onSell(flavor)}
-            className="btn btn-primary btn-sm"
-          >
-            Sell
-          </button>
-        )
-      },
-      {
-        key: "delete",
-        content: flavor => (
-          <button
-            onClick={() => this.props.onDelete(flavor)}
-            className="btn btn-danger btn-sm"
-          >
-            Delete
-          </button>
-        )
-      });
+          key: "sell",
+          content: flavor => (
+            <button
+              onClick={() => this.props.onSell(flavor)}
+              className="btn btn-primary btn-sm"
+            >
+              Sell
+            </button>
+          )
+        },
+        {
+          key: "delete",
+          content: flavor => (
+            <button
+              onClick={() => this.props.onDelete(flavor)}
+              className="btn btn-danger btn-sm"
+            >
+              Delete
+            </button>
+          )
+        }
+      );
     } else {
       columns.unshift({
         path: "name",
@@ -58,12 +58,15 @@ class IceCreamTable extends Component {
   render() {
     const { flavors, onSort, sortColumn, currentRouterPath } = this.props;
     return (
-      <Table
-        columns={this.configureTableContent(currentRouterPath)}
-        data={flavors}
-        sortColumn={sortColumn}
-        onSort={onSort}
-      />
+      <React.Fragment>
+        
+        <Table
+          columns={this.configureTableContent(currentRouterPath)}
+          data={flavors}
+          sortColumn={sortColumn}
+          onSort={onSort}
+        />
+      </React.Fragment>
     );
   }
 }

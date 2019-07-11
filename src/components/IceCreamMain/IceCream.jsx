@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import _ from "lodash";
 import IceCreamTable from "../IceCreamTable/iceCreamTable";
 import { getAllFlavors, deleteIceCream } from "../../services/fakeFlavorService";
@@ -93,13 +92,6 @@ class IceCream extends Component {
             />
           </div>
           <div className="col">
-          <Link
-            to="/flavors/new"
-            className="btn btn-primary"
-            style={{ marginBottom: 20 }}
-          >
-            New Flavor
-          </Link>
             <IceCreamTable
               flavors={flavors}
               sortColumn={sortColumn}

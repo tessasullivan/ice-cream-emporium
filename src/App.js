@@ -6,6 +6,7 @@ import IceCream from "./components/IceCreamMain/IceCream";
 import IceCreamForm from "./components/IceCreamForm/IceCreamForm";
 import NavBar from "./components/NavBar/navBar";
 import Employees from "./components/Employees/employees";
+import Error404 from "./components/Error404";
 
 class App extends Component {
   render() {
@@ -22,8 +23,9 @@ class App extends Component {
             />
             <Route path="/flavors/:id" component={IceCreamForm} />
             <Route path="/flavors" component={IceCream} />
+            <Redirect from="/patrons" to="/flavors" />
             <Redirect from="/" exact to="/flavors" />
-            {/* <Redirect to="/not-found" /> */}
+            <Route component={Error404}/>
           </Switch>
         </main>
       </React.Fragment>
