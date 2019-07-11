@@ -6,6 +6,7 @@ import { getIceCreamTypes } from "../../services/fakeTypeService";
 import { paginate } from "../common/paginate";
 import Pagination from "../common/pagination";
 import ListGroup from "../common/listGroup";
+import AddIceCream from '../IceCreamForm/addIceCream';
 import handsHoldingIceCream from "../../assets/handsHoldingIceCream.jpeg";
 
 class IceCream extends Component {
@@ -92,6 +93,7 @@ class IceCream extends Component {
             />
           </div>
           <div className="col">
+          <AddIceCream currentRouterPath={this.props.currentRouterPath}/>
             <IceCreamTable
               flavors={flavors}
               sortColumn={sortColumn}
