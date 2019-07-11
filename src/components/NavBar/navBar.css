@@ -1,0 +1,9 @@
+.storeName  {
+  font-size: 1.4em;
+  font-family: fantasy;
+  color: darkgreen;
+  font-weight: bold
+}
+.navbar {
+  margin-bottom: 20px;
+}

@@ -4,15 +4,18 @@ import "./App.css";
 import IceCream from "./components/IceCream";
 // import IceCreamImage from "./components/IceCreamImage";
 import IceCreamForm from "./components/IceCreamForm";
-import StoreHeader from "./components/storeHeader";
+import NavBar from "./components/NavBar/navBar";
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <StoreHeader />
+        <NavBar/>
         <main className="container">
           <Switch>
+            {/* <Route path="/employees" render={props => (
+
+            )} */}
             <Route path="/add" component={IceCreamForm} />
             <Route path="/" component={IceCream} />
           </Switch>
