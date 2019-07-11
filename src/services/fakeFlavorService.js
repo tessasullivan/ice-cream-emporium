@@ -95,9 +95,9 @@ export function saveIceCream(flavor){
   flavorInDb.price = flavor.price;
 
   // If the flavor isn't in the above table, add it
-  if (!flavorInDb) {
+  if (!flavorInDb._id) {
     flavorInDb._id = Date.now().toString();
-    flavors.push(flavor);
+    flavors.push(flavorInDb);
 
   return flavorInDb;
   }
