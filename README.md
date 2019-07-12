@@ -47,4 +47,7 @@ _Contact Tessa Sullivan @ tessa.sullivan@gmail.com_
 
 *{This software is licensed under the MIT license}*
 
+#### Photo credits
+Photo by Mark Cruz on Unsplash
+
 Copyright (c) 2019 **_Tessa Sullivan_**
