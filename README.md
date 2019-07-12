@@ -5,12 +5,12 @@
 This application will allow employees to manage the ice cream store's inventory and patrons to see the list of available ice cream flavors.
 
 ### Specs
-![Component diagram](/src/Ice-cream-store.png)
+![Component diagram](/src/assets/Ice-cream-store.png)
 
 | User story | Details|
 | :-------------     | :------------- |
-| Users can see list of ice creams | List includes flavor, type of ice cream, and price |
-| Users can sort list | Can sort by flavor, type, or price |
+| Patrons can see list of ice creams | List includes flavor, type of ice cream, amount available, and price |
+| Patrons can sort list | Can sort by flavor, type, or price |
 | Employee can add new flavors of ice cream | |
 | Employee can edit inventory | They can edit the name, type of ice cream and price |
 | Employee can sell ice cream | The number of available pints decreases when sold |
