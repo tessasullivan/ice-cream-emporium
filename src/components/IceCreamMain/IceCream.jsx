@@ -7,6 +7,7 @@ import { paginate } from "../common/paginate";
 import Pagination from "../common/pagination";
 import ListGroup from "../common/listGroup";
 import AddIceCream from '../iceCreamForm/addIceCream';
+// import FilterIceCream from '../filterIceCream/filterIceCream';
 import handsHoldingIceCream from "../../assets/handsHoldingIceCream.jpeg";
 
 class IceCream extends Component {
@@ -49,6 +50,15 @@ class IceCream extends Component {
     this.setState({ sortColumn });
   };
 
+  handleFilter = quantity => {
+    let flavors;
+    if (quantity === 'All') {
+      flavors = getAllFlavors();
+    } else {
+      flavors = this.state.flavors.filter(flavor => flavor.amountInStock <= quantity);
+    }
+    this.setState({flavors});
+  }
   // Get 1 page of flavors based on currentPage, pageSize, and type of ice cream
   getPagedData = () => {
     const {
@@ -94,6 +104,7 @@ class IceCream extends Component {
           </div>
           <div className="col">
           <AddIceCream currentRouterPath={this.props.currentRouterPath}/>
+          {/* <FilterIceCream currentRouterPath={this.props.currentRouterPath} onFilter={this.handleFilter}/> */}
             <IceCreamTable
               flavors={flavors}
               sortColumn={sortColumn}
