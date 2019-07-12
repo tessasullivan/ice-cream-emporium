@@ -65,7 +65,7 @@ class IceCreamForm extends Form {
 
   doSubmit = () => {
     saveIceCream(this.state.data);
-    this.props.history.push("/flavors");
+    this.props.history.push("/employees");
   };
   render() {
     return (

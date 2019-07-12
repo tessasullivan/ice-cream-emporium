@@ -50,7 +50,14 @@ const flavors = [
     amountInStock: 105, 
     price: 5.5
   },
-    {
+  {
+    _id: "5b21ca3eeb7f6fbccd471905",
+    name: "Cookie Dough",
+    type: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Deluxe" },
+    amountInStock: 96, 
+    price: 5.5
+  },
+  {
     _id: "5b21ca3eeb7f6fbccd472001",
     name: "Pineapple",
     type: {  _id: "5b21ca3eeb7f6fbccd471820", name: "Sorbet" },
@@ -62,6 +69,13 @@ const flavors = [
     name: "Peach",
     type: {  _id: "5b21ca3eeb7f6fbccd471820", name: "Sorbet" },
     amountInStock: 124, 
+    price: 4
+  },
+  {
+    _id: "5b21ca3eeb7f6fbccd472005",
+    name: "Cherry Blossom",
+    type: {  _id: "5b21ca3eeb7f6fbccd471820", name: "Sorbet" },
+    amountInStock: 85, 
     price: 4
   },
   {
