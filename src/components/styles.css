@@ -1,0 +1,11 @@
+.btn-page, .btn-add, .btn-sell {
+  background-color: darkgreen;
+  color: white;
+}
+.btn-add:hover, .btn-sell:hover {
+  background-color: #003300;
+  color: white;
+}
+.btn-add {
+  margin-bottom: 20px;
+}

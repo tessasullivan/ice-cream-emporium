@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Table from "../common/table";
+import "../styles.css";
 
 class IceCreamTable extends Component {
   configureTableContent = currentRouterPath => {
@@ -27,7 +28,7 @@ class IceCreamTable extends Component {
           content: flavor => (
             <button
               onClick={() => this.props.onSell(flavor)}
-              className="btn btn-primary btn-sm"
+              className="btn btn-sell btn-sm"
             >
               Sell
             </button>
@@ -58,15 +59,12 @@ class IceCreamTable extends Component {
   render() {
     const { flavors, onSort, sortColumn, currentRouterPath } = this.props;
     return (
-      <React.Fragment>
-        
         <Table
           columns={this.configureTableContent(currentRouterPath)}
           data={flavors}
           sortColumn={sortColumn}
           onSort={onSort}
         />
-      </React.Fragment>
     );
   }
 }
