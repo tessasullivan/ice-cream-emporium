@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import _ from "lodash";
-import IceCreamTable from "../IceCreamTable/iceCreamTable";
+import IceCreamTable from "../iceCreamTable/iceCreamTable";
 import { getAllFlavors, deleteIceCream } from "../../services/fakeFlavorService";
 import { getIceCreamTypes } from "../../services/fakeTypeService";
 import { paginate } from "../common/paginate";
 import Pagination from "../common/pagination";
 import ListGroup from "../common/listGroup";
-import AddIceCream from '../IceCreamForm/addIceCream';
+import AddIceCream from '../iceCreamForm/addIceCream';
 import handsHoldingIceCream from "../../assets/handsHoldingIceCream.jpeg";
 
 class IceCream extends Component {

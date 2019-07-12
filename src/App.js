@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
-import IceCream from "./components/IceCreamMain/IceCream";
-import IceCreamForm from "./components/IceCreamForm/IceCreamForm";
-import NavBar from "./components/NavBar/navBar";
-import Employees from "./components/Employees/employees";
-import Error404 from "./components/Error404";
+import IceCream from "./components/iceCreamMain/iceCream";
+import IceCreamForm from "./components/iceCreamForm/iceCreamForm";
+import NavBar from "./components/navBar/navBar";
+import Employees from "./components/employees/employees";
+import Error404 from "./components/error404";
 
 class App extends Component {
   render() {
