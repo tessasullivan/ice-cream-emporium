@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
-import IceCream from "./components/iceCreamMain/iceCream";
+import IceCream from './components/iceCreamMain/iceCream';
 import IceCreamForm from "./components/iceCreamForm/iceCreamForm";
 import NavBar from "./components/navBar/navBar";
 import Employees from "./components/employees/employees";
