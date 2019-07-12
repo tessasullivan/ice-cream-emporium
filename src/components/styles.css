@@ -1,4 +1,4 @@
-.btn-page, .btn-add, .btn-sell {
+.page-item.active .page-link, .btn-page, .btn-add, .btn-sell {
   background-color: darkgreen;
   color: white;
 }

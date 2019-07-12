@@ -66,7 +66,7 @@ const flavors = [
   },
   {
     _id: "5b21ca3eeb7f6fbccd472003",
-    name: "Lemon",
+    name: "Lemon Souffle",
     type: {  _id: "5b21ca3eeb7f6fbccd471820", name: "Sorbet" },
     amountInStock: 124, 
     price: 4

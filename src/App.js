@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
 import IceCream from "./components/IceCreamMain/IceCream";
-// import IceCreamImage from "./components/IceCreamImage";
 import IceCreamForm from "./components/IceCreamForm/IceCreamForm";
 import NavBar from "./components/NavBar/navBar";
 import Employees from "./components/Employees/employees";
