@@ -4,8 +4,8 @@ import "./App.css";
 import IceCream from './components/iceCreamMain/iceCream';
 import IceCreamForm from "./components/iceCreamForm/iceCreamForm";
 import NavBar from "./components/navBar/navBar";
-import Employees from "./components/employees/employees";
 import Error404 from "./components/error404";
+import Employees from "./components/employees/employees";
 
 class App extends Component {
   render() {
