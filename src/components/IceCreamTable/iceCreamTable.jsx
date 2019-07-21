@@ -5,6 +5,7 @@ import Table from "../common/table";
 import "../styles.css";
 
 class IceCreamTable extends Component {
+
   configureTableContent = currentRouterPath => {
     // These columns are the same for patrons and employees
     let columns = [
