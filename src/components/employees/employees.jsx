@@ -1,5 +1,5 @@
 import React from "react";
-import IceCream from "../iceCreamMain/iceCream";
+import IceCream from "../iceCream/iceCream";
 
 const Employees = props => {
   return (
