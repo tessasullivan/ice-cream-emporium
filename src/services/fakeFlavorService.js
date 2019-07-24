@@ -26,7 +26,7 @@ const flavors = [
     _id: "5b21ca3eeb7f6fbccd471901",
     name: "Banana Pudding",
     type: {  _id: "5b21ca3eeb7f6fbccd471814", name: "Deluxe" },
-    amountInStock: 124,
+    amountInStock: 5,
     price: 5.5
   },
   {

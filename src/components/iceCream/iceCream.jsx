@@ -37,7 +37,7 @@ class IceCream extends Component {
 
   handleSale = (flavor) => {
     let flavors = this.state.flavors.filter(f => f._id !== flavor._id);
-    flavor.amountInStock--;
+    if (flavor.amountInStock > 0) flavor.amountInStock--;
     flavors.push(flavor);
     this.setState({flavors});
   }

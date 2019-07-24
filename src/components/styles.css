@@ -1,6 +1,7 @@
-.page-item.active .page-link, .btn-page, .btn-add, .btn-sell {
+.page-link, .btn-page, .btn-add, .btn-sell {
   background-color: darkgreen;
   color: white;
+  z-index: 1;
 }
 .btn-add:hover, .btn-sell:hover {
   background-color: #003300;
@@ -8,4 +9,12 @@
 }
 .btn-add {
   margin-bottom: 20px;
+}
+
+/* An attempt to override a bootstrap class but this does not work */
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: darkgreen;
+  border-color: darkgreen;
 }

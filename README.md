@@ -32,7 +32,7 @@ This application will allow employees to manage the ice cream store's inventory 
 This will open a browser window to http://localhost:3000.
 
 ## Known issues
-No known issues at this time
+* Sell button does not become disabled when amount is 0
 
 ## Technologies Used
 
